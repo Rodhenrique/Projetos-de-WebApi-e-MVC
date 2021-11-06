@@ -1,0 +1,266 @@
+﻿@model Be3_Gerenciador.ViewModels.PacientesViewModel
+
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <table id="tabela" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th colspan="4">
+                                <div class="table-head">
+                                    <h2>Manage <b>Employees</b></h2>
+
+                                    <div class="search">
+                                        <label for="filtro" class="col-md-4 col-form-label text-md-right">Filtro</label>
+                                        <input name="filtro" type="text" oninput="filtro(this.value)" placeholder="Digite o nome para buscar:" />
+                                    </div>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">CPF</th>
+                            <th scope="col">Convênio</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="conteudo">
+                     
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal" class="my-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Atualização de prontuário</div>
+                    <div class="card-body">
+                        <form id="formulario" method="POST" action='@Url.Action("Index", "Pacientes")'>
+                            <input type="text" id="identificator" style="display:none" name="identificator" />
+
+                            <div class="form-group row">
+                                <label for="prontuario" class="col-md-4 col-form-label text-md-right">Prontuário</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="prontuario" class="form-control" name="prontuario" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="nome" class="col-md-4 col-form-label text-md-right">Nome</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="nome" class="form-control" name="nome" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="sobrenome" class="col-md-4 col-form-label text-md-right">Sobrenome</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="sobrenome" class="form-control" name="sobrenome" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="data" class="col-md-4 col-form-label text-md-right">Data de nascimento</label>
+                                <div class="col-md-6">
+                                    <input type="date" id="data" class="form-control" name="data" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="genero" class="col-md-4 col-form-label text-md-right">Gênero</label>
+                                <div class="col-md-6">
+                                    <select name="genero" class="form-control">
+                                        <option disabled>Selecione</option>
+                                        <option>Feminino</option>
+                                        <option>Masculino</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="cpf" class="col-md-4 col-form-label text-md-right">CPF</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="cpf" name="cpf" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="rg" class="col-md-4 col-form-label text-md-right">RG</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="rg" class="form-control" name="rg" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="uf" class="col-md-4 col-form-label text-md-right">UF do RG</label>
+                                <div class="col-md-6">
+                                    <select class="form-control" name="uf" id="uf">
+                                        <option>Sp</option>
+                                        <option>Rj</option>
+                                        <option>RO</option>
+                                        <option>AC</option>
+                                        <option>AM</option>
+                                        <option>RR</option>
+                                        <option>PA</option>
+                                        <option>AP</option>
+                                        <option>TO</option>
+                                        <option>MA</option>
+                                        <option>PI</option>
+                                        <option>CE</option>
+                                        <option>RN</option>
+                                        <option>PB</option>
+                                        <option>PE</option>
+                                        <option>AL</option>
+                                        <option>SE</option>
+                                        <option>BA</option>
+                                        <option>MG</option>
+                                        <option>ES</option>
+                                        <option>PR</option>
+                                        <option>SC</option>
+                                        <option>RS</option>
+                                        <option>MS</option>
+                                        <option>MT</option>
+                                        <option>GO</option>
+                                        <option>DF</option>
+                                    </select>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
+                                <div class="col-md-6">
+                                    <input type="email" id="email" class="form-control" name="email" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="celular" class="col-md-4 col-form-label text-md-right">Celular</label>
+                                <div class="col-md-6">
+                                    <input type="tel" id="celular" class="form-control" name="celular" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="telefone" class="col-md-4 col-form-label text-md-right">Telefone fixo</label>
+                                <div class="col-md-6">
+                                    <input type="tel" id="telefone" class="form-control" name="telefone">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="convenio" class="col-md-4 col-form-label text-md-right">Convênio</label>
+                                <div class="col-md-6">
+                                    <input type="tel" id="convenio" class="form-control" name="convenio" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="carteirinha" class="col-md-4 col-form-label text-md-right">Carteirinha do convênio</label>
+                                <div class="col-md-6">
+                                    <input type="tel" id="carteirinha" class="form-control" name="carteirinha" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="validade" class="col-md-4 col-form-label text-md-right">Validade da carteirinha</label>
+                                <div class="col-md-6">
+                                    <input type="month" id="validade" class="form-control" name="validade" required>
+                                </div>
+                            </div>
+
+                            <div class="container-button">
+                                <div class="buttons-container">
+                                    <input onclick="CloseModal()" type="button" class="btn btn-danger" value="Cancelar" />
+
+                                    <button type="submit" class="btn btn-success">
+                                        Atualizar
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    window.onload = filtro("");
+
+
+    function OpenModal(id) {
+        var pacientes = JSON.parse('@Html.Raw(Json.Serialize(Model.pacientes))');
+        var busca = pacientes.find(x => x.id === parseInt(id));
+        let data = new Date(busca.dataDeNascimento);
+        let dataFormatada = data.getFullYear() + '-' + ("0" + data.getMonth()).slice(-2) + '-' + ("0" + data.getDay()).slice(-2);
+        document.getElementById("modal").style.display = "block";
+        document.getElementById("identificator").value = id;
+        document.getElementById("prontuario").value = busca.prontuario;
+        document.getElementById("nome").value = busca.nome;
+        document.getElementById("sobrenome").value = busca.sobrenome;
+        document.getElementById("data").value = dataFormatada;
+        document.getElementById("cpf").value = busca.cpf;
+        document.getElementById("rg").value = busca.rg;
+        document.getElementById("uf").value = busca.uf;
+        document.getElementById("email").value = busca.email;
+        document.getElementById("celular").value = busca.celular;
+        document.getElementById("telefone").value = busca.telefone;
+        document.getElementById("convenio").value = busca.convenio;
+        document.getElementById("carteirinha").value = busca.carterinhaDoConvenio;
+        let vali = new Date(busca.validadeDaCarteirinha);
+        document.getElementById("validade").value = vali.getFullYear() + '-' + ("0" + vali.getMonth()).slice(-2);
+    }
+
+    function CloseModal() {
+        document.getElementById("modal").style.display = "none";
+    }
+
+    function filtro(nome) {
+        console.log(nome);
+
+         var pacientes = JSON.parse('@Html.Raw(Json.Serialize(Model.pacientes))');
+         var conteudo = document.getElementById("conteudo");
+         if (pacientes.lenght != 0 && nome != "") {
+             var buscas = pacientes.filter((paciente) => paciente.nome.toUpperCase().includes(nome.toUpperCase()))
+
+             conteudo.innerHTML = "";
+
+             buscas.map((paciente) => {
+                 let tr = document.createElement('tr');
+                 tr.innerHTML += '<td> ' + paciente.nome + '</td>';
+                 tr.innerHTML += '<td> ' + paciente.cpf + '</td>';
+                 tr.innerHTML += '<td> ' + paciente.convenio + '</td>';
+                 tr.innerHTML += '<td><button onclick="OpenModal('+paciente.id+')" type="button" class="btn btn-success">Edita</button></td>'
+
+                 conteudo.append(tr);
+             })
+         }
+         if (nome == "") {
+             conteudo.innerHTML = "";
+
+             pacientes.map((paciente) => {
+                 let tr = document.createElement('tr');
+                 tr.innerHTML += '<td> ' + paciente.nome + '</td>';
+                 tr.innerHTML += '<td> ' + paciente.cpf + '</td>';
+                 tr.innerHTML += '<td> ' + paciente.convenio + '</td>';
+                 tr.innerHTML += '<td><button onclick="OpenModal(' + paciente.id +')" type="button" class="btn btn-success">Edita</button></td>'
+
+                 conteudo.append(tr);
+             })
+        }
+    }
+
+    window.onload = function () {
+
+    }
+
+</script>

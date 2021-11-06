@@ -1,0 +1,32 @@
+<div class="geral">
+    <div>
+        <p>
+            <mat-toolbar class="container-toolbar">
+                <span><img id="logo" src="./../../../assets/imgs/Logo.png" alt=""></span>
+                <span><a class="link-nav" href="">Consulta</a></span>
+            </mat-toolbar>
+        </p>
+    </div>
+
+    <div class="container-consulta">
+        <div>
+            <div>
+                <h2>Cadastro para empréstimo</h2>
+            </div>
+            <div class="inputs">
+                <form [formGroup]="formUser">                    
+                    <input type="text" required formControlName="nome" placeholder="Digite nome completo:">
+                    
+                    <input type="number" required formControlName="valor" placeholder="Digite o valor do empréstimo:">
+                    
+                    <input type="number" required formControlName="parcelas" placeholder="Nº de parcelas">
+                </form>
+
+                </div>
+            <div class="ctn-btn">
+                <button (click)="postUser()">Cadastrar</button>
+            </div>
+        </div>
+    </div>
+    
+</div>

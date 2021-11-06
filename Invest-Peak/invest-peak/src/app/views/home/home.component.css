@@ -1,0 +1,70 @@
+*{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#logo{
+    width: 40%;
+}
+.container-toolbar{
+    background-color: #1A3151;
+    display: flex;
+    justify-content: space-between;
+}
+
+.link-nav{
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 400;
+}
+.container-consulta{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputs input{
+    margin: 0.5rem;
+    width: 200px;
+    height: 35px;
+    border: solid 1px #1A3151;
+    outline: 0;
+    padding-left: 0.5rem;
+    box-shadow: 1px 2px #888888;
+}
+
+.ctn-btn{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1em;
+}
+
+.ctn-btn button{
+    background: #ffffff;
+    color:#1A3151;
+    border: 1px solid #d8c16f ;
+    font-size: 16px;
+    width: 140px;
+    height: 30px;
+    outline: 0;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+}
+
+.ctn-btn button:hover{
+    background: #d8c16f;
+    color: #ffffff;
+}
+
+@media only screen and (max-width: 685px) {
+
+    .inputs form{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+}

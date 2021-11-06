@@ -1,0 +1,194 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #212529;
+    text-align: left;
+    background-color: #f5f8fa;
+}
+
+.menu-navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,.04);
+    font-family: poppins, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+    .menu-navbar div:first-child {
+        display: flex;
+        width: 80%;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1.5rem;
+    }
+
+    .menu-navbar a {
+        font-size: 24px;
+        color: rgba(0,0,0,.9);
+    }
+
+        .menu-navbar a span:nth-child(1) {
+            font-size: 23px;
+            color: #6bb342;
+        }
+
+        .menu-navbar a span:nth-child(2) {
+            font-size: 24px;
+            color: #3b8c43;
+        }
+
+        .menu-navbar a:hover {
+            color: #000000;
+        }
+
+.menu li a:hover {
+    color: #007bff;
+}
+
+.menu-navbar a:link {
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.menu ul {
+    width: 100%;
+    display: flex;
+    margin-bottom: 0;
+}
+
+.menu li {
+    list-style: none;
+    margin-right: 40px;
+}
+
+
+.my-form {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    font-size: 16px;
+}
+
+    .my-form .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+.login-form {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.login-form .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#formulario input, #formulario select {
+    font-size: 13px;
+}
+
+.container-button {
+    display: flex;
+    justify-content: center;
+    margin: 2px;
+}
+
+.container-button div {
+    width: 63%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container-button button{
+    font-size: 18px;
+}
+
+.container {
+    padding: 2rem 0rem;
+}
+
+h4 {
+    margin: 2rem 0rem 1rem;
+}
+
+.table-image, th, tr, td {
+    vertical-align: middle;
+    padding: 0;
+    margin: 0;
+}
+
+#tabela thead tr th {
+    font-family: poppins;
+    font-size: 15px;
+    padding: 4px;
+    border-bottom: 0;
+    border-top: 0;
+}
+
+#tabela td {
+    padding: 5px;
+    font-size: 13px;
+}
+
+.table-head {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #435d7d;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.table-head h2 {
+    color: #fff;
+    font-weight: 300;
+    width: 100%;
+}
+
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+    .search label {
+        color: #f5f8fa;
+        font-weight: 300;
+    }
+
+    .search input {
+        border-radius: 3px;
+        border: none;
+        outline: 0;
+        width: 180px;
+        height: 25px;
+    }
+
+#modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); 
+ }
+
+.buttons-container input, .buttons-container button {
+    margin: 10px;
+}

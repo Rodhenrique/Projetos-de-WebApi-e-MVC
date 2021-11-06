@@ -1,0 +1,26 @@
+.navbar-eder
+{
+    box-shadow: 0 2px 4px rgba(0,0,0,.04);
+    margin-bottom: 4rem;
+}
+
+.navbar-brand , .nav-link
+{
+    font-family: poppins, sans-serif;
+}
+
+.itens-menu{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.itens-menu ul{
+    display: flex;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.itens-menu ul li a{
+    color: rgba(0,0,0,.5);
+}
